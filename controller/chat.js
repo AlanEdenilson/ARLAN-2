@@ -25,6 +25,7 @@ $(function () {
     $('#enviar').on('click',()=>{
 
     var mensaje= $('#userInput').val()
+    enviar(mensaje)
     console.log(mensaje)
 
     })
