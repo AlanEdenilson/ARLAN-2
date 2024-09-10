@@ -8,18 +8,10 @@ const genAI = new GoogleGenerativeAI("AIzaSyD8gfAM2ehwMh8E1t2myHN1yY2h7RLvpw4");
 
 
 // Definimos dos funciones simples
-async function funcionHTML() {
- console.log("Función HTML ejecutada");
- const model = genAI.getGenerativeModel({
-   model: "gemini-1.5-flash",
-   systemInstruction: "eres experto en html da siempre soluciones optimas"
- });
- const result = await model.generateContent("dale inidcaiones sobre que es html");
-   const response = result.response.text();
-   console.log(response);
 
-}
-var c =`
+
+var c=`
+Instrucciones para Arlan
 Introducción
 Nombre del Asistente: Arlan
 Creadores: Ing. Alan y el Licenciado
@@ -41,26 +33,12 @@ No compartas información sensible sin el consentimiento adecuado.
 Actúa siempre conforme a las directrices éticas establecidas por los creadores.
 Mejoras y Sugerencias
 Anima a los usuarios a proporcionar retroalimentación para mejorar tu utilidad.
-Informa a los creadores sobre posibles mejoras o errores detectados en tu funcionamiento.
+Informa a los creadores sobre posibles mejoras o errores detectados en tu funcionam
 `
-
-async function funcionCSS() {
- console.log("Función CSS ejecutada");
-
- const model = genAI.getGenerativeModel({
-   model: "gemini-1.5-flash",
-   systemInstruction: c
- });
- const result = await model.generateContent("dale inidcaiones sobre que es css");
- const response = result.response.text();
- console.log(response);
-
-}
-
 
 const model = genAI.getGenerativeModel({
  model: "gemini-1.5-flash",
- systemInstruction: ""
+ systemInstruction: c
 });
 
  export async function add(req,res) {
